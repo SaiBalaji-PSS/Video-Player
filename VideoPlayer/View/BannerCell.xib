@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="109" id="KGk-i7-Jjw" customClass="BannerCell" customModule="VideoPlayer" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="109"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="109"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="baY-ym-vkE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="109"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="MIy-Tr-DdR">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="109"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="097-Xa-pmG">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="MIy-Tr-DdR" secondAttribute="bottom" id="UGp-EJ-IQa"/>
+                            <constraint firstItem="MIy-Tr-DdR" firstAttribute="leading" secondItem="baY-ym-vkE" secondAttribute="leading" id="i5b-Zt-xau"/>
+                            <constraint firstAttribute="trailing" secondItem="MIy-Tr-DdR" secondAttribute="trailing" id="mF9-Nz-iva"/>
+                            <constraint firstItem="MIy-Tr-DdR" firstAttribute="top" secondItem="baY-ym-vkE" secondAttribute="top" id="n9S-Fy-k7o"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="baY-ym-vkE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="bQ2-JG-4Ed"/>
+                    <constraint firstAttribute="trailing" secondItem="baY-ym-vkE" secondAttribute="trailing" id="sai-XQ-iFw"/>
+                    <constraint firstItem="baY-ym-vkE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="uhP-i7-KJ1"/>
+                    <constraint firstAttribute="bottom" secondItem="baY-ym-vkE" secondAttribute="bottom" id="wkJ-kz-R9i"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="collectionView" destination="MIy-Tr-DdR" id="ckt-mM-PEr"/>
+            </connections>
+            <point key="canvasLocation" x="138.93129770992365" y="42.605633802816904"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

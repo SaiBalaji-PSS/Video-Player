@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E40510BB2C402548003BE3B0 /* BannerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40510B92C402548003BE3B0 /* BannerCell.swift */; };
+		E40510BC2C402548003BE3B0 /* BannerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E40510BA2C402548003BE3B0 /* BannerCell.xib */; };
+		E40510BF2C402597003BE3B0 /* BannerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E40510BD2C402597003BE3B0 /* BannerCollectionViewCell.swift */; };
+		E40510C02C402597003BE3B0 /* BannerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E40510BE2C402597003BE3B0 /* BannerCollectionViewCell.xib */; };
+		E40510C32C402A06003BE3B0 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = E40510C22C402A06003BE3B0 /* SDWebImage */; };
 		E4554F042C3FB4D900B94A13 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4554F032C3FB4D900B94A13 /* AppDelegate.swift */; };
 		E4554F062C3FB4D900B94A13 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4554F052C3FB4D900B94A13 /* SceneDelegate.swift */; };
 		E4554F082C3FB4D900B94A13 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4554F072C3FB4D900B94A13 /* SignInVC.swift */; };
@@ -54,6 +59,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E40510B92C402548003BE3B0 /* BannerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCell.swift; sourceTree = "<group>"; };
+		E40510BA2C402548003BE3B0 /* BannerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BannerCell.xib; sourceTree = "<group>"; };
+		E40510BD2C402597003BE3B0 /* BannerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerCollectionViewCell.swift; sourceTree = "<group>"; };
+		E40510BE2C402597003BE3B0 /* BannerCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BannerCollectionViewCell.xib; sourceTree = "<group>"; };
 		E4554F002C3FB4D900B94A13 /* VideoPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4554F032C3FB4D900B94A13 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E4554F052C3FB4D900B94A13 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +109,7 @@
 				E4554F282C3FB6D800B94A13 /* FirebaseAppDistribution-Beta in Frameworks */,
 				E4554F2C2C3FB6D800B94A13 /* FirebaseAuthCombine-Community in Frameworks */,
 				E4554F4A2C3FB6D800B94A13 /* FirebasePerformance in Frameworks */,
+				E40510C32C402A06003BE3B0 /* SDWebImage in Frameworks */,
 				E4554F422C3FB6D800B94A13 /* FirebaseInAppMessagingSwift-Beta in Frameworks */,
 				E4554F502C3FB6D800B94A13 /* FirebaseStorage in Frameworks */,
 				E4554F342C3FB6D800B94A13 /* FirebaseDynamicLinks in Frameworks */,
@@ -170,6 +180,10 @@
 		E4554F602C3FB9D600B94A13 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E40510B92C402548003BE3B0 /* BannerCell.swift */,
+				E40510BA2C402548003BE3B0 /* BannerCell.xib */,
+				E40510BD2C402597003BE3B0 /* BannerCollectionViewCell.swift */,
+				E40510BE2C402597003BE3B0 /* BannerCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -238,6 +252,7 @@
 				E4554F532C3FB6D800B94A13 /* FirebaseVertexAI-Preview */,
 				E4554F562C3FB77700B94A13 /* GoogleSignIn */,
 				E4554F582C3FB77700B94A13 /* GoogleSignInSwift */,
+				E40510C22C402A06003BE3B0 /* SDWebImage */,
 			);
 			productName = VideoPlayer;
 			productReference = E4554F002C3FB4D900B94A13 /* VideoPlayer.app */;
@@ -270,6 +285,7 @@
 			packageReferences = (
 				E4554F1C2C3FB6D800B94A13 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				E4554F552C3FB77700B94A13 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+				E40510C12C402A06003BE3B0 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = E4554F012C3FB4D900B94A13 /* Products */;
 			projectDirPath = "";
@@ -289,6 +305,8 @@
 				E4554F5D2C3FB89E00B94A13 /* GoogleService-Info.plist in Resources */,
 				E4554F102C3FB4DA00B94A13 /* Assets.xcassets in Resources */,
 				E4554F0B2C3FB4D900B94A13 /* Main.storyboard in Resources */,
+				E40510C02C402597003BE3B0 /* BannerCollectionViewCell.xib in Resources */,
+				E40510BC2C402548003BE3B0 /* BannerCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,10 +323,12 @@
 				E4554F692C3FCC6E00B94A13 /* HomeViewModel.swift in Sources */,
 				E4554F6C2C3FD11400B94A13 /* NetworkService.swift in Sources */,
 				E4554F082C3FB4D900B94A13 /* SignInVC.swift in Sources */,
+				E40510BF2C402597003BE3B0 /* BannerCollectionViewCell.swift in Sources */,
 				E4554F042C3FB4D900B94A13 /* AppDelegate.swift in Sources */,
 				E4554F062C3FB4D900B94A13 /* SceneDelegate.swift in Sources */,
 				E4554F6E2C3FD2EE00B94A13 /* ResponseModel.swift in Sources */,
 				E4554F632C3FC15F00B94A13 /* SignInViewModel.swift in Sources */,
+				E40510BB2C402548003BE3B0 /* BannerCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -533,6 +553,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		E40510C12C402A06003BE3B0 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.19.4;
+			};
+		};
 		E4554F1C2C3FB6D800B94A13 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
@@ -552,6 +580,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		E40510C22C402A06003BE3B0 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E40510C12C402A06003BE3B0 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
 		E4554F1D2C3FB6D800B94A13 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E4554F1C2C3FB6D800B94A13 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

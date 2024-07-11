@@ -7,78 +7,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "FD6FA038-0F5D-4196-A979-A49118FD4E4D"
+            uuid = "CB951E28-823A-46A7-90A6-F6BF402AA6A1"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VideoPlayer/Controller/HomeVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
-            landmarkName = "logoutBtnPressed()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "FD6FA038-0F5D-4196-A979-A49118FD4E4D - 15a6d86ec754f2cc"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "VideoPlayer.HomeVC.logoutBtnPressed() -&gt; ()"
-                  moduleName = "VideoPlayer"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/saibalaji/Documents/VideoPlayer/VideoPlayer/Controller/HomeVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "46"
-                  endingLineNumber = "46"
-                  offsetFromSymbolStart = "28">
-               </Location>
-               <Location
-                  uuid = "FD6FA038-0F5D-4196-A979-A49118FD4E4D - 325fdd8d30177fae"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "VideoPlayer.HomeVC.showMessage(title: Swift.String, message: Swift.String, onPress: () -&gt; ()) -&gt; ()"
-                  moduleName = "VideoPlayer"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/saibalaji/Documents/VideoPlayer/VideoPlayer/Controller/HomeVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "61"
-                  endingLineNumber = "61"
-                  offsetFromSymbolStart = "124">
-               </Location>
-               <Location
-                  uuid = "FD6FA038-0F5D-4196-A979-A49118FD4E4D - 15a6d86ec754f49a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "VideoPlayer.HomeVC.logoutBtnPressed() -&gt; ()"
-                  moduleName = "VideoPlayer"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/saibalaji/Documents/VideoPlayer/VideoPlayer/Controller/HomeVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "60"
-                  endingLineNumber = "60"
-                  offsetFromSymbolStart = "212">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "F48B975C-BA65-4A86-8C5A-8A3607974F18"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "VideoPlayer/Controller/HomeVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
             landmarkName = "setupBinding()"
             landmarkType = "7">
          </BreakpointContent>
