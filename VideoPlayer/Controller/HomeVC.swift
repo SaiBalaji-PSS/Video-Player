@@ -31,6 +31,7 @@ class HomeVC: UIViewController {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.register(UINib(nibName: "BannerCell", bundle: nil), forCellReuseIdentifier: "CELL")
+        self.tableView.separatorStyle = .none
     }
     
     func setupBinding(){
@@ -68,10 +69,10 @@ class HomeVC: UIViewController {
     
     func showMessage(title: String,message: String,onPress:@escaping()->(Void)){
         let avc = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        avc.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
+        avc.addAction(UIAlertAction(title: "Yes", style: .default, handler: { _ in
             onPress()
         }))
-        avc.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        avc.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
         self.present(avc, animated: true)
     }
     

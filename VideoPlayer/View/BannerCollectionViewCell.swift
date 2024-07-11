@@ -19,6 +19,7 @@ class BannerCollectionViewCell: UICollectionViewCell {
     }
     
     func updateCell(url: String){
+        self.bannerImageView.layer.cornerRadius = 4.0
         self.bannerImageView.contentMode = .scaleAspectFill
         self.bannerImageView.sd_setImage(with: URL(string: url)!)
         
