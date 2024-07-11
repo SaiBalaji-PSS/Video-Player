@@ -19,6 +19,7 @@ class HomeVC: UIViewController {
         // Do any additional setup after loading the view.
         self.configureUI()
         self.setupBinding()
+        vm.getAllMovies()
     }
     
     func configureUI(){
@@ -41,6 +42,13 @@ class HomeVC: UIViewController {
                 }
             }
                 
+        }.store(in: &cancellables)
+        vm.$movies.receive(on: RunLoop.main).sink { movies  in
+            if let movies{
+                if movies.isEmpty == false{
+                    print(movies)
+                }
+            }
         }.store(in: &cancellables)
     }
 
