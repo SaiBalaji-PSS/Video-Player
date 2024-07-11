@@ -9,30 +9,36 @@ import UIKit
 import Firebase
 import FirebaseAuth
 import GoogleSignIn
+import Combine
 
 class SignInVC: UIViewController {
-
+    private var vm = SignInViewModel()
+    private var cancellables = Set<AnyCancellable>()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-    }
-
-    @IBAction func signInBtnPressed(_ sender: GIDSignInButton) {
-        print("Inside")
-        guard let clientId = FirebaseApp.app()?.options.clientID else{return }
-        let config = GIDConfiguration(clientID: clientId)
-        GIDSignIn.sharedInstance.configuration = config
-        GIDSignIn.sharedInstance.signIn(withPresenting: self){ [unowned self] result, error in
-            if let error{
-                print(error)
-            }
-            if let user = result?.user{
-                print(user.profile?.email)
-                print(user.profile?.name)
-                
-            }
-        }
+        vm.intializeGoogleAuth()
+        self.setupBinding()
     }
     
+    @IBAction func signInBtnPressed(_ sender: GIDSignInButton) {
+        print("Inside")
+        vm.signInBtnPressed(viewController: self)
+        
+    }
+    func setupBinding(){
+        vm.$authData.receive(on: RunLoop.main).sink { authData in
+            if let authData{
+                print(authData)
+                AppSession.shared.showHomeScreen()
+            }
+        }.store(in: &cancellables)
+        vm.$authError.receive(on: RunLoop.main).sink { authError in
+            if let authError{
+                print(authError)
+            }
+        }.store(in: &cancellables)
+    }
 }
 

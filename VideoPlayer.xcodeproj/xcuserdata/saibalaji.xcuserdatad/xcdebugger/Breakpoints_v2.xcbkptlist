@@ -7,49 +7,81 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5FC24E90-3F20-417A-BE50-CE1F99C8A028"
+            uuid = "E9AF4C1C-5847-47C5-8682-97CDABE87548"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "VideoPlayer/Controller/SignInVC.swift"
+            filePath = "VideoPlayer/AppSession.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
-            landmarkName = "signInBtnPressed(_:)"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "showHomeScreen()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "5FC24E90-3F20-417A-BE50-CE1F99C8A028 - f072dc421ec1bad4"
+                  uuid = "E9AF4C1C-5847-47C5-8682-97CDABE87548 - f774dd39c1e78788"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "VideoPlayer.SignInVC.signInBtnPressed(__C.GIDSignInButton) -&gt; ()"
+                  symbolName = "VideoPlayer.AppSession.showHomeScreen() -&gt; ()"
                   moduleName = "VideoPlayer"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/saibalaji/Documents/VideoPlayer/VideoPlayer/Controller/SignInVC.swift"
+                  urlString = "file:///Users/saibalaji/Documents/VideoPlayer/VideoPlayer/AppSession.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "21"
-                  endingLineNumber = "21"
-                  offsetFromSymbolStart = "52">
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "28">
                </Location>
                <Location
-                  uuid = "5FC24E90-3F20-417A-BE50-CE1F99C8A028 - f072dc421ec1baf7"
+                  uuid = "E9AF4C1C-5847-47C5-8682-97CDABE87548 - f774dd39c1e78788"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "VideoPlayer.SignInVC.signInBtnPressed(__C.GIDSignInButton) -&gt; ()"
+                  symbolName = "VideoPlayer.AppSession.showHomeScreen() -&gt; ()"
                   moduleName = "VideoPlayer"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/saibalaji/Documents/VideoPlayer/VideoPlayer/Controller/SignInVC.swift"
+                  urlString = "file:///Users/saibalaji/Documents/VideoPlayer/VideoPlayer/AppSession.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "22"
-                  endingLineNumber = "22"
-                  offsetFromSymbolStart = "232">
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "72">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "51B50926-E044-43EA-8D84-72D9D02B96CC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VideoPlayer/AppSession.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "showHomeScreen()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FD6FA038-0F5D-4196-A979-A49118FD4E4D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VideoPlayer/Controller/HomeVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "HomeVC"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
