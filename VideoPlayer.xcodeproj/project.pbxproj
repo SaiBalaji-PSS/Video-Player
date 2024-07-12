@@ -56,6 +56,10 @@
 		E4554F692C3FCC6E00B94A13 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4554F682C3FCC6E00B94A13 /* HomeViewModel.swift */; };
 		E4554F6C2C3FD11400B94A13 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4554F6B2C3FD11400B94A13 /* NetworkService.swift */; };
 		E4554F6E2C3FD2EE00B94A13 /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4554F6D2C3FD2EE00B94A13 /* ResponseModel.swift */; };
+		E4DEBFB52C416237007F6045 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DEBFB32C416237007F6045 /* MovieCell.swift */; };
+		E4DEBFB62C416237007F6045 /* MovieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4DEBFB42C416237007F6045 /* MovieCell.xib */; };
+		E4DEBFB82C416CE6007F6045 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DEBFB72C416CE6007F6045 /* DetailVC.swift */; };
+		E4DEBFBA2C416E09007F6045 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4DEBFB92C416E09007F6045 /* DetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +83,10 @@
 		E4554F682C3FCC6E00B94A13 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		E4554F6B2C3FD11400B94A13 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		E4554F6D2C3FD2EE00B94A13 /* ResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModel.swift; sourceTree = "<group>"; };
+		E4DEBFB32C416237007F6045 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
+		E4DEBFB42C416237007F6045 /* MovieCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieCell.xib; sourceTree = "<group>"; };
+		E4DEBFB72C416CE6007F6045 /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
+		E4DEBFB92C416E09007F6045 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +173,7 @@
 			children = (
 				E4554F072C3FB4D900B94A13 /* SignInVC.swift */,
 				E4554F662C3FC92000B94A13 /* HomeVC.swift */,
+				E4DEBFB72C416CE6007F6045 /* DetailVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -184,6 +193,8 @@
 				E40510BA2C402548003BE3B0 /* BannerCell.xib */,
 				E40510BD2C402597003BE3B0 /* BannerCollectionViewCell.swift */,
 				E40510BE2C402597003BE3B0 /* BannerCollectionViewCell.xib */,
+				E4DEBFB32C416237007F6045 /* MovieCell.swift */,
+				E4DEBFB42C416237007F6045 /* MovieCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -193,6 +204,7 @@
 			children = (
 				E4554F622C3FC15F00B94A13 /* SignInViewModel.swift */,
 				E4554F682C3FCC6E00B94A13 /* HomeViewModel.swift */,
+				E4DEBFB92C416E09007F6045 /* DetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -302,6 +314,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4554F132C3FB4DA00B94A13 /* LaunchScreen.storyboard in Resources */,
+				E4DEBFB62C416237007F6045 /* MovieCell.xib in Resources */,
 				E4554F5D2C3FB89E00B94A13 /* GoogleService-Info.plist in Resources */,
 				E4554F102C3FB4DA00B94A13 /* Assets.xcassets in Resources */,
 				E4554F0B2C3FB4D900B94A13 /* Main.storyboard in Resources */,
@@ -317,6 +330,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4DEBFB52C416237007F6045 /* MovieCell.swift in Sources */,
 				E4554F652C3FC8FB00B94A13 /* AppSession.swift in Sources */,
 				E4554F672C3FC92000B94A13 /* HomeVC.swift in Sources */,
 				E4554F0E2C3FB4D900B94A13 /* VideoPlayer.xcdatamodeld in Sources */,
@@ -329,6 +343,8 @@
 				E4554F6E2C3FD2EE00B94A13 /* ResponseModel.swift in Sources */,
 				E4554F632C3FC15F00B94A13 /* SignInViewModel.swift in Sources */,
 				E40510BB2C402548003BE3B0 /* BannerCell.swift in Sources */,
+				E4DEBFBA2C416E09007F6045 /* DetailViewModel.swift in Sources */,
+				E4DEBFB82C416CE6007F6045 /* DetailVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,7 +14,7 @@ class HomeVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     private var cancellables = Set<AnyCancellable>()
     private var movies = [Movie]()
-    
+    private var sectionTitles = ["","Top Rated","Now Playing","Upcoming"]
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -84,14 +84,48 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return sectionTitles.count
+    }
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return sectionTitles[section]
+    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath) as? BannerCell{
-            cell.updateCell(movies: self.movies)
-            return cell
-        }
+        
+     
+            if let cell = tableView.dequeueReusableCell(withIdentifier: "CELL", for: indexPath) as? BannerCell{
+                cell.delegate = self
+                cell.tableViewIndex = indexPath
+                cell.updateCell(movies: self.movies.shuffled())
+                return cell
+            }
+        
+        
+       
+        
         return UITableViewCell()
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 200
+    }
+}
+
+
+extension HomeVC: BannerCellDelegate{
+    func bannerCollectionViewCellClicked(movieData: Movie) {
+        print(movieData)
+        if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailVC") as? DetailVC{
+            vc.selectedVideoURL = movieData.url
+            //all the video urls with selected video url inserted at begining 
+            var finalVideoURLs = self.movies.filter({ movie in
+                return movie.url != movieData.url
+            }).map({ movieData in
+                return movieData.url
+            })
+            finalVideoURLs.insert(movieData.url, at: 0)
+            vc.videoURLs = finalVideoURLs
+            
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
 }

@@ -7,11 +7,16 @@
 
 import UIKit
 
-class BannerCell: UITableViewCell {
+protocol BannerCellDelegate: AnyObject{
+    func bannerCollectionViewCellClicked(movieData: Movie)
+}
 
+class BannerCell: UITableViewCell {
+    weak var delegate: BannerCellDelegate?
+    
     @IBOutlet weak var collectionView: UICollectionView!
     private var movies = [Movie]()
-    
+    var tableViewIndex = IndexPath()
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -44,13 +49,22 @@ extension BannerCell: UICollectionViewDelegate, UICollectionViewDataSource, UICo
         }
         return UICollectionViewCell()
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.delegate?.bannerCollectionViewCellClicked(movieData: self.movies[indexPath.item])
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
            return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
        }
        
        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-           let size = collectionView.frame.size
-           return CGSize(width: size.width, height: size.height)
+           if tableViewIndex.section == 0{
+               let size = collectionView.frame.size
+               return CGSize(width: size.width, height: size.height)
+           }
+           return CGSize(width: 150, height: 200)
+           
        }
        
        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -60,4 +74,5 @@ extension BannerCell: UICollectionViewDelegate, UICollectionViewDataSource, UICo
        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
            return 0.0
        }
+    
 }
