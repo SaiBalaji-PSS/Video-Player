@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import AVKit
+import Combine
 
 class DetailVC: UIViewController {
 
@@ -28,6 +30,7 @@ class DetailVC: UIViewController {
     var videoURLs = [String]()
     var selectedVideoURL: String?
     private var vm = DetailViewModel()
+    private var cancellables = Set<AnyCancellable>()
     private var windowInterFace: UIInterfaceOrientation?{
         return self.view.window?.windowScene?.interfaceOrientation
     }
@@ -38,18 +41,43 @@ class DetailVC: UIViewController {
 
         // Do any additional setup after loading the view.
         vm.setupVideoPlayer(videoURLS: videoURLs, playerView: self.playerView, controlView: self.controlView)
-        self.configureUI()
+        self.setupTouchGesture()
+        self.setupBiding()
+        
     }
     
     
-    func configureUI(){
+    func setupTouchGesture(){
         self.playerView.isUserInteractionEnabled = true
         self.playerView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(playerViewTapped)))
         self.nextImageView.isUserInteractionEnabled = true
         self.nextImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(nextImageViewTapped)))
-        self.previousImageView.isUserInteractionEnabled = true 
+        self.previousImageView.isUserInteractionEnabled = true
         self.previousImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(previousImageViewTapped)))
+        self.forwardBtn.isUserInteractionEnabled = true
+        self.forwardBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(seekForwardTapped)))
+        self.backwardBtn.isUserInteractionEnabled = true
+        self.backwardBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(seekBackwardTapped)))
+        
     }
+    
+    func setupBiding(){
+        vm.$currentTimeValue.receive(on: RunLoop.main).removeDuplicates().sink { currentValue in
+            self.startTimeLbl.text = currentValue
+       
+        }.store(in: &cancellables)
+        vm.$endTimeValue.receive(on: RunLoop.main).sink { endValue in
+            self.endTimeLbl.text = endValue
+        }.store(in: &cancellables)
+        vm.$sliderValue.receive(on: RunLoop.main).sink { sliderValue in
+            self.playBackSlider.value = sliderValue
+        }.store(in: &cancellables)
+    }
+    
+   
+    
+    
+   
     
 
     override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -79,5 +107,10 @@ class DetailVC: UIViewController {
     @objc func playerViewTapped(){
         self.controlView.isHidden.toggle()
     }
-    
+    @objc func seekForwardTapped(){
+        vm.seekForward()
+    }
+    @objc func seekBackwardTapped(){
+        vm.seekBackward()
+    }
 }
