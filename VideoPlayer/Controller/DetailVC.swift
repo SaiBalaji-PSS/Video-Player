@@ -48,6 +48,8 @@ class DetailVC: UIViewController {
         return self.view.window?.windowScene?.interfaceOrientation
     }
     
+    private var filteredMovie: MovieTS?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,11 +60,30 @@ class DetailVC: UIViewController {
         self.setupBiding()
         self.configureUI()
         self.navigationController?.navigationBar.isHidden = true
+       
         
     }
     override func viewDidAppear(_ animated: Bool) {
         //self.playerView.layer.addSublayer(self.thumbNailImageView.layer)
         vm.setupVideoPlayer(videoURLS: videoURLs, playerView: self.playerView, controlView: self.controlView)
+        DatabaseService.shared.readAllTimeStamps { error , timeStamps in
+            if let error{
+                print(error)
+            }
+            if let timeStamps{
+                print(timeStamps)
+               if let filteredMovie = timeStamps.filter { movie in
+                    movie.movieId == self.selectedMovie?.id
+               }.first{
+                   print(filteredMovie)
+                   self.filteredMovie = filteredMovie
+                   self.vm.resumePlayingFromTimeStamp(seconds: filteredMovie.timeStamp)
+                 //  self.controlView.isHidden = true
+                   self.playPauseBtn.image = UIImage(systemName: "pause")
+               }
+               
+            }
+        }
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -176,8 +197,30 @@ class DetailVC: UIViewController {
            
         }
         vm.playPause()
+      
     }
     @objc func backBtnTapped(){
+       
+            if let currentDuration = vm.player?.currentItem?.currentTime(){
+                print(currentDuration)
+                let interval = Int(CMTimeGetSeconds(currentDuration))
+                let seconds = interval % 60
+                print(seconds)
+                print(CMTimeMakeWithSeconds(CMTimeGetSeconds(currentDuration), preferredTimescale: 600))
+                
+                if let filteredMovie{
+                    //data is already in db so update
+                    DatabaseService.shared.updateTimeStamp(movieTimeStamp: filteredMovie, newTimeStamp: Double(seconds))
+                }
+                else{
+                    //data is not in db so create
+                    DatabaseService.shared.saveData(movieId: self.selectedMovie?.id ?? "", timeStamp: Double(seconds))
+                }
+               
+            }
+  
+        
+      
         self.vm.player?.pause()
         self.navigationController?.popViewController(animated: true)
     }

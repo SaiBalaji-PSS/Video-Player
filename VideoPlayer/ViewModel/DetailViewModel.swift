@@ -116,6 +116,13 @@ class DetailViewModel: ObservableObject{
         return self.player?.rate != 0.0
     }
    
+    func resumePlayingFromTimeStamp(seconds: Double){
+        let durationValue = CMTimeMakeWithSeconds(seconds, preferredTimescale: 600)
+      //  self.player?.seek(to:durationValue)
+        self.player?.seek(to: durationValue, completionHandler: { _ in
+            self.player?.play()
+        })
+    }
     
     func stringFromTimeInterval(interval: TimeInterval) -> String {
         if interval.isNaN == false{
@@ -127,6 +134,8 @@ class DetailViewModel: ObservableObject{
         }
         return ""
     }
+    
+    
     
     
     
