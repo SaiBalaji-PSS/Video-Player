@@ -74,6 +74,7 @@ class DetailVC: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         self.navigationController?.navigationBar.isHidden = true
+        self.fullScreenImageView.image = self.windowInterFace?.isPortrait == true ?  UIImage(systemName: "arrow.down.left.and.arrow.up.right"):  UIImage(systemName:"arrow.up.right.and.arrow.down.left")
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -179,7 +180,7 @@ class DetailVC: UIViewController {
             self.navigationController?.navigationBar.isHidden = false
 
             self.bottomView.isHidden = false
-            self.fullScreenImageView.image = UIImage(systemName: "arrow.up.right.and.arrow.down.left")
+           // self.fullScreenImageView.image = UIImage(systemName: "arrow.up.right.and.arrow.down.left")
         }
         else{
             self.heightConstraint.constant = self.view.layer.bounds.width
@@ -187,7 +188,7 @@ class DetailVC: UIViewController {
             self.navigationController?.navigationBar.isHidden = true
           //  self.collectionView.reloadData()
            // self.playerLayer?.frame = self.playerView.bounds
-            self.fullScreenImageView.image = UIImage(systemName: "arrow.down.left.and.arrow.up.right")
+         //   self.fullScreenImageView.image = UIImage(systemName: "arrow.down.left.and.arrow.up.right")
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             self.vm.playerLayer?.frame = self.playerView.bounds
@@ -267,7 +268,7 @@ class DetailVC: UIViewController {
                 windowScreen.requestGeometryUpdate(.iOS(interfaceOrientations: .landscape)){error in
                     print(error)
                 }
-                self.fullScreenImageView.image = UIImage(systemName: "arrow.up.right.and.arrow.down.left")
+           //     self.fullScreenImageView.image = UIImage(systemName: "arrow.up.right.and.arrow.down.left")
             }
             //return from full screen
             else if windowScreen.interfaceOrientation == .landscapeLeft || windowScreen.interfaceOrientation == .landscapeRight{
@@ -275,7 +276,7 @@ class DetailVC: UIViewController {
                     print(error)
                 }
                
-                self.fullScreenImageView.image = UIImage(systemName: "arrow.down.left.and.arrow.up.right")
+               // self.fullScreenImageView.image = UIImage(systemName: "arrow.down.left.and.arrow.up.right")
             }
         }
         else{
@@ -283,13 +284,13 @@ class DetailVC: UIViewController {
             if UIDevice.current.orientation == .portrait{
                 UIDevice.current.setValue(UIInterfaceOrientation.landscapeLeft, forKey: "orientation")
                 
-                self.fullScreenImageView.image = UIImage(systemName: "arrow.up.right.and.arrow.down.left")
+           //     self.fullScreenImageView.image = UIImage(systemName: "arrow.up.right.and.arrow.down.left")
             }
             //return from full screen
             else if UIDevice.current.orientation == .landscapeLeft || UIDevice.current.orientation == .landscapeRight{
                 UIDevice.current.setValue(UIInterfaceOrientation.portrait, forKey: "orientation")
                 
-                self.fullScreenImageView.image = UIImage(systemName: "arrow.down.left.and.arrow.up.right")
+              //  self.fullScreenImageView.image = UIImage(systemName: "arrow.down.left.and.arrow.up.right")
             }
         }
     }
@@ -299,6 +300,18 @@ class DetailVC: UIViewController {
             self.movieNameLbl.text = currentPlayingMovie.title ?? ""
             self.movieDescriptionLbl.text = currentPlayingMovie.description ?? ""
             self.posterImageView.sd_setImage(with: URL(string: currentPlayingMovie.thumb ?? ""))
+            DatabaseService.shared.readAllTimeStamps { error , movieTimeStamps in
+                if let error{
+                    print(error)
+                }
+                if let movieTimeStamps{
+                    if let currentMovieTimeStampData = movieTimeStamps.filter({ movie  in
+                        movie.movieId == currentPlayingMovie.id
+                    }).first{
+                        self.filteredMovie = currentMovieTimeStampData
+                    }
+                }
+            }
         }
     }
    
