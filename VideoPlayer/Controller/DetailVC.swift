@@ -24,6 +24,8 @@ class DetailVC: UIViewController {
     @IBOutlet weak var nextImageView: UIImageView!
     @IBOutlet weak var previousImageView: UIImageView!
     
+    
+    @IBOutlet weak var airPlayView: UIView!
     @IBOutlet weak var fullScreenImageView: UIImageView!
     @IBOutlet weak var endTimeLbl: UILabel!
     
@@ -116,6 +118,7 @@ class DetailVC: UIViewController {
         self.backBtnImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(backBtnTapped)))
         self.fullScreenImageView.isUserInteractionEnabled = true
         self.fullScreenImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(fullScreenBtnTapped)))
+     
         
     }
     
@@ -130,8 +133,14 @@ class DetailVC: UIViewController {
             self.movieDescriptionLbl.text = selectedMovie.description
             self.posterImageView.contentMode = .scaleAspectFill
             self.posterImageView.sd_setImage(with: URL(string: selectedMovie.thumb ?? ""))
+            let routePickerView = AVRoutePickerView(frame: .zero)
+            routePickerView.frame = airPlayView.bounds
+            routePickerView.activeTintColor = .green
+            routePickerView.tintColor = .white
+            airPlayView.addSubview(routePickerView)
             
         }
+        
     }
     
     func setupBiding(){
@@ -170,6 +179,7 @@ class DetailVC: UIViewController {
             self.navigationController?.navigationBar.isHidden = false
 
             self.bottomView.isHidden = false
+            self.fullScreenImageView.image = UIImage(systemName: "arrow.up.right.and.arrow.down.left")
         }
         else{
             self.heightConstraint.constant = self.view.layer.bounds.width
@@ -177,6 +187,7 @@ class DetailVC: UIViewController {
             self.navigationController?.navigationBar.isHidden = true
           //  self.collectionView.reloadData()
            // self.playerLayer?.frame = self.playerView.bounds
+            self.fullScreenImageView.image = UIImage(systemName: "arrow.down.left.and.arrow.up.right")
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             self.vm.playerLayer?.frame = self.playerView.bounds
@@ -218,24 +229,27 @@ class DetailVC: UIViewController {
     }
     @objc func backBtnTapped(){
        
-            
+        if vm.getIsPlaying(){
             if let currentDuration = vm.player?.currentItem?.currentTime(){
                 print(currentDuration)
                 let interval = Int(CMTimeGetSeconds(currentDuration))
-                let seconds = interval % 60
-                print(seconds)
-                print(CMTimeMakeWithSeconds(CMTimeGetSeconds(currentDuration), preferredTimescale: 600))
+               // let seconds = interval % 60
+              //  let minutes = (interval / 60) % 60
+              //  print(seconds)
+                print("INTERVAL IS \(Double(interval))")
                 
                 if let filteredMovie{
                     //data is already in db so update
-                    DatabaseService.shared.updateTimeStamp(movieTimeStamp: filteredMovie, newTimeStamp: Double(seconds))
+                    DatabaseService.shared.updateTimeStamp(movieTimeStamp: filteredMovie, newTimeStamp: Double(interval))
                 }
                 else{
                     //data is not in db so create
-                    DatabaseService.shared.saveData(movieId: self.selectedMovie?.id ?? "", timeStamp: Double(seconds))
+                    DatabaseService.shared.saveData(movieId: self.selectedMovie?.id ?? "", timeStamp: Double(interval))
                 }
                
             }
+        }
+       
   
         
       
@@ -277,6 +291,7 @@ class DetailVC: UIViewController {
             }
         }
     }
+   
 }
 
 extension DetailVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{

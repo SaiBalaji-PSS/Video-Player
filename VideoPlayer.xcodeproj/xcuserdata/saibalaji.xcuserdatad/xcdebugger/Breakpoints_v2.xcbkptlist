@@ -39,195 +39,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "F6811489-8094-432F-BA75-FB3870C969E5"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "VideoPlayer/Controller/DetailVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "231"
-            endingLineNumber = "231"
-            landmarkName = "backBtnTapped()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "F6811489-8094-432F-BA75-FB3870C969E5 - 415cb6c6ed8c6f07"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "VideoPlayer.DetailVC.backBtnTapped() -&gt; ()"
-                  moduleName = "VideoPlayer"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/saibalaji/Documents/VideoPlayer/VideoPlayer/Controller/DetailVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "211"
-                  endingLineNumber = "211"
-                  offsetFromSymbolStart = "1624">
-               </Location>
-               <Location
-                  uuid = "F6811489-8094-432F-BA75-FB3870C969E5 - 415cb6c6ed8c6ff9"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "VideoPlayer.DetailVC.backBtnTapped() -&gt; ()"
-                  moduleName = "VideoPlayer"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/saibalaji/Documents/VideoPlayer/VideoPlayer/Controller/DetailVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "213"
-                  endingLineNumber = "213"
-                  offsetFromSymbolStart = "1624">
-               </Location>
-               <Location
-                  uuid = "F6811489-8094-432F-BA75-FB3870C969E5 - 415cb6c6ed8c6e5a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "VideoPlayer.DetailVC.backBtnTapped() -&gt; ()"
-                  moduleName = "VideoPlayer"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/saibalaji/Documents/VideoPlayer/VideoPlayer/Controller/DetailVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "216"
-                  endingLineNumber = "216"
-                  offsetFromSymbolStart = "1624">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "341C60B6-FCE8-4BCB-8A04-58698DAC6851"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "VideoPlayer/Controller/DetailVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "235"
-            endingLineNumber = "235"
-            landmarkName = "backBtnTapped()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "341C60B6-FCE8-4BCB-8A04-58698DAC6851 - 415cb6c6ed8c6fbb"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "VideoPlayer.DetailVC.backBtnTapped() -&gt; ()"
-                  moduleName = "VideoPlayer"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/saibalaji/Documents/VideoPlayer/VideoPlayer/Controller/DetailVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "215"
-                  endingLineNumber = "215"
-                  offsetFromSymbolStart = "1732">
-               </Location>
-               <Location
-                  uuid = "341C60B6-FCE8-4BCB-8A04-58698DAC6851 - 415cb6c6ed8c6e7d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "VideoPlayer.DetailVC.backBtnTapped() -&gt; ()"
-                  moduleName = "VideoPlayer"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/saibalaji/Documents/VideoPlayer/VideoPlayer/Controller/DetailVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "217"
-                  endingLineNumber = "217"
-                  offsetFromSymbolStart = "1732">
-               </Location>
-               <Location
-                  uuid = "341C60B6-FCE8-4BCB-8A04-58698DAC6851 - 415cb6c6ed8c6ede"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "VideoPlayer.DetailVC.backBtnTapped() -&gt; ()"
-                  moduleName = "VideoPlayer"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/saibalaji/Documents/VideoPlayer/VideoPlayer/Controller/DetailVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "220"
-                  endingLineNumber = "220"
-                  offsetFromSymbolStart = "1732">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "8FDE7273-10AF-41F3-9E61-89C2C31C439A"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "VideoPlayer/Controller/DetailVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "226"
-            endingLineNumber = "226"
-            landmarkName = "backBtnTapped()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "8FDE7273-10AF-41F3-9E61-89C2C31C439A - 415cb6c6ed8c6ce0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "VideoPlayer.DetailVC.backBtnTapped() -&gt; ()"
-                  moduleName = "VideoPlayer"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/saibalaji/Documents/VideoPlayer/VideoPlayer/Controller/DetailVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "206"
-                  endingLineNumber = "206"
-                  offsetFromSymbolStart = "1348">
-               </Location>
-               <Location
-                  uuid = "8FDE7273-10AF-41F3-9E61-89C2C31C439A - 415cb6c6ed8c6ca2"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "VideoPlayer.DetailVC.backBtnTapped() -&gt; ()"
-                  moduleName = "VideoPlayer"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/saibalaji/Documents/VideoPlayer/VideoPlayer/Controller/DetailVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "208"
-                  endingLineNumber = "208"
-                  offsetFromSymbolStart = "1348">
-               </Location>
-               <Location
-                  uuid = "8FDE7273-10AF-41F3-9E61-89C2C31C439A - 415cb6c6ed8c6f07"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "VideoPlayer.DetailVC.backBtnTapped() -&gt; ()"
-                  moduleName = "VideoPlayer"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/saibalaji/Documents/VideoPlayer/VideoPlayer/Controller/DetailVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "211"
-                  endingLineNumber = "211"
-                  offsetFromSymbolStart = "1348">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "624CD99C-A2C5-4455-A19A-E20881152A8E"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -235,10 +46,42 @@
             filePath = "VideoPlayer/Controller/DetailVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "254"
-            endingLineNumber = "254"
+            startingLineNumber = "268"
+            endingLineNumber = "268"
             landmarkName = "fullScreenBtnTapped()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "624CD99C-A2C5-4455-A19A-E20881152A8E - 1eefde9441dd5366"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VideoPlayer.DetailVC.fullScreenBtnTapped() -&gt; ()"
+                  moduleName = "VideoPlayer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/saibalaji/Documents/VideoPlayer/VideoPlayer/Controller/DetailVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "268"
+                  endingLineNumber = "268"
+                  offsetFromSymbolStart = "868">
+               </Location>
+               <Location
+                  uuid = "624CD99C-A2C5-4455-A19A-E20881152A8E - 1eefde9441dd5366"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VideoPlayer.DetailVC.fullScreenBtnTapped() -&gt; ()"
+                  moduleName = "VideoPlayer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/saibalaji/Documents/VideoPlayer/VideoPlayer/Controller/DetailVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "268"
+                  endingLineNumber = "268"
+                  offsetFromSymbolStart = "652">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -251,13 +94,13 @@
             filePath = "VideoPlayer/Controller/DetailVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "261"
-            endingLineNumber = "261"
+            startingLineNumber = "275"
+            endingLineNumber = "275"
             landmarkName = "fullScreenBtnTapped()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "F02B7AF0-FC41-4909-8283-2C9B375C5168 - 1eefde9441dd5c30"
+                  uuid = "F02B7AF0-FC41-4909-8283-2C9B375C5168 - 1eefde9441dd504f"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -267,12 +110,12 @@
                   urlString = "file:///Users/saibalaji/Documents/VideoPlayer/VideoPlayer/Controller/DetailVC.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "246"
-                  endingLineNumber = "246"
+                  startingLineNumber = "275"
+                  endingLineNumber = "275"
                   offsetFromSymbolStart = "1208">
                </Location>
                <Location
-                  uuid = "F02B7AF0-FC41-4909-8283-2C9B375C5168 - 1eefde9441dd5dd3"
+                  uuid = "F02B7AF0-FC41-4909-8283-2C9B375C5168 - 1eefde9441dd506e"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -282,8 +125,8 @@
                   urlString = "file:///Users/saibalaji/Documents/VideoPlayer/VideoPlayer/Controller/DetailVC.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "247"
-                  endingLineNumber = "247"
+                  startingLineNumber = "276"
+                  endingLineNumber = "276"
                   offsetFromSymbolStart = "1208">
                </Location>
             </Locations>
@@ -299,13 +142,13 @@
             filePath = "VideoPlayer/Controller/DetailVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "275"
-            endingLineNumber = "275"
+            startingLineNumber = "289"
+            endingLineNumber = "289"
             landmarkName = "fullScreenBtnTapped()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "D7FA3BBD-B0E0-419E-BD93-DF018CCCE2D1 - 1eefde9441dd5220"
+                  uuid = "D7FA3BBD-B0E0-419E-BD93-DF018CCCE2D1 - 1eefde9441dd561e"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -315,12 +158,12 @@
                   urlString = "file:///Users/saibalaji/Documents/VideoPlayer/VideoPlayer/Controller/DetailVC.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "262"
-                  endingLineNumber = "262"
+                  startingLineNumber = "292"
+                  endingLineNumber = "292"
                   offsetFromSymbolStart = "1460">
                </Location>
                <Location
-                  uuid = "D7FA3BBD-B0E0-419E-BD93-DF018CCCE2D1 - 1eefde9441dd53c3"
+                  uuid = "D7FA3BBD-B0E0-419E-BD93-DF018CCCE2D1 - 1eefde9441dd5621"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -330,8 +173,8 @@
                   urlString = "file:///Users/saibalaji/Documents/VideoPlayer/VideoPlayer/Controller/DetailVC.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "263"
-                  endingLineNumber = "263"
+                  startingLineNumber = "293"
+                  endingLineNumber = "293"
                   offsetFromSymbolStart = "1460">
                </Location>
             </Locations>
@@ -383,6 +226,150 @@
                   offsetFromSymbolStart = "48">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2F5848C2-D6A3-4398-B501-3B7CBC0A443A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VideoPlayer/Controller/DetailVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "243"
+            endingLineNumber = "243"
+            landmarkName = "backBtnTapped()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "2F5848C2-D6A3-4398-B501-3B7CBC0A443A - 415cb6c6ed8c6b27"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VideoPlayer.DetailVC.backBtnTapped() -&gt; ()"
+                  moduleName = "VideoPlayer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/saibalaji/Documents/VideoPlayer/VideoPlayer/Controller/DetailVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "243"
+                  endingLineNumber = "243"
+                  offsetFromSymbolStart = "1768">
+               </Location>
+               <Location
+                  uuid = "2F5848C2-D6A3-4398-B501-3B7CBC0A443A - 415cb6c6ed8c6b27"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VideoPlayer.DetailVC.backBtnTapped() -&gt; ()"
+                  moduleName = "VideoPlayer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/saibalaji/Documents/VideoPlayer/VideoPlayer/Controller/DetailVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "243"
+                  endingLineNumber = "243"
+                  offsetFromSymbolStart = "1536">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "17911694-33BE-4448-BA4A-D74A83394648"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VideoPlayer/Controller/DetailVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "247"
+            endingLineNumber = "247"
+            landmarkName = "backBtnTapped()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "17911694-33BE-4448-BA4A-D74A83394648 - 415cb6c6ed8c6a5b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VideoPlayer.DetailVC.backBtnTapped() -&gt; ()"
+                  moduleName = "VideoPlayer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/saibalaji/Documents/VideoPlayer/VideoPlayer/Controller/DetailVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "247"
+                  endingLineNumber = "247"
+                  offsetFromSymbolStart = "2128">
+               </Location>
+               <Location
+                  uuid = "17911694-33BE-4448-BA4A-D74A83394648 - 415cb6c6ed8c6a5b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "VideoPlayer.DetailVC.backBtnTapped() -&gt; ()"
+                  moduleName = "VideoPlayer"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/saibalaji/Documents/VideoPlayer/VideoPlayer/Controller/DetailVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "247"
+                  endingLineNumber = "247"
+                  offsetFromSymbolStart = "1648">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "06D178A7-B8A7-448A-AF6C-BBDB02696EDD"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VideoPlayer/Controller/DetailVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "getAllTimeStamps()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "565DA95F-734F-4AE4-90D0-2F3B03B40FD6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VideoPlayer/Service/DatabaseService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "saveData(movieId:timeStamp:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C1014DF1-AAA0-4E19-9EDC-65DF39B5A8BD"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VideoPlayer/Service/DatabaseService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "saveData(movieId:timeStamp:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

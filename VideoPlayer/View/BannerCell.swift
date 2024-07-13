@@ -23,7 +23,7 @@ class BannerCell: UITableViewCell {
         self.collectionView.register(UINib(nibName: "BannerCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CELL")
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
-        self.collectionView.isPagingEnabled = true 
+        //self.collectionView.isPagingEnabled = true 
         self.collectionView.showsHorizontalScrollIndicator = false
         self.collectionView.showsVerticalScrollIndicator = false 
     }
