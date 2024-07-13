@@ -9,7 +9,7 @@ import Foundation
 import AVKit
 
 class DetailViewModel: ObservableObject{
-    private var seekValue = 15.0
+    private var seekValue = 5.0
      var player: AVPlayer?
      var playerLayer: AVPlayerLayer?
     var videoItems = [AVPlayerItem]()
