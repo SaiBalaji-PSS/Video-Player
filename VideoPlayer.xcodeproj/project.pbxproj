@@ -84,18 +84,6 @@
 		E4554F682C3FCC6E00B94A13 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		E4554F6B2C3FD11400B94A13 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		E4554F6D2C3FD2EE00B94A13 /* ResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModel.swift; sourceTree = "<group>"; };
-		E4D6CCFB2C426D6B00A56F6A /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
-		E4D6CCFC2C426D6B00A56F6A /* Roboto-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-MediumItalic.ttf"; sourceTree = "<group>"; };
-		E4D6CCFD2C426D6B00A56F6A /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
-		E4D6CCFE2C426D6B00A56F6A /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
-		E4D6CCFF2C426D6B00A56F6A /* Roboto-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BlackItalic.ttf"; sourceTree = "<group>"; };
-		E4D6CD002C426D6B00A56F6A /* Roboto-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BoldItalic.ttf"; sourceTree = "<group>"; };
-		E4D6CD012C426D6B00A56F6A /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
-		E4D6CD022C426D6B00A56F6A /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
-		E4D6CD032C426D6B00A56F6A /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
-		E4D6CD042C426D6B00A56F6A /* Roboto-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-LightItalic.ttf"; sourceTree = "<group>"; };
-		E4D6CD052C426D6B00A56F6A /* Roboto-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Italic.ttf"; sourceTree = "<group>"; };
-		E4D6CD062C426D6B00A56F6A /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		E4DB1B1C2C423ED90040EAA9 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
 		E4DEBFB32C416237007F6045 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		E4DEBFB42C416237007F6045 /* MovieCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieCell.xib; sourceTree = "<group>"; };
@@ -164,7 +152,6 @@
 		E4554F022C3FB4D900B94A13 /* VideoPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				E4D6CCFA2C426D5E00A56F6A /* Fonts */,
 				E4554F6A2C3FD10B00B94A13 /* Service */,
 				E4554F612C3FB9DA00B94A13 /* ViewModel */,
 				E4554F602C3FB9D600B94A13 /* View */,
@@ -231,25 +218,6 @@
 				E4DB1B1C2C423ED90040EAA9 /* DatabaseService.swift */,
 			);
 			path = Service;
-			sourceTree = "<group>";
-		};
-		E4D6CCFA2C426D5E00A56F6A /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				E4D6CCFB2C426D6B00A56F6A /* Roboto-Black.ttf */,
-				E4D6CCFF2C426D6B00A56F6A /* Roboto-BlackItalic.ttf */,
-				E4D6CCFE2C426D6B00A56F6A /* Roboto-Bold.ttf */,
-				E4D6CD002C426D6B00A56F6A /* Roboto-BoldItalic.ttf */,
-				E4D6CD052C426D6B00A56F6A /* Roboto-Italic.ttf */,
-				E4D6CD032C426D6B00A56F6A /* Roboto-Light.ttf */,
-				E4D6CD042C426D6B00A56F6A /* Roboto-LightItalic.ttf */,
-				E4D6CD062C426D6B00A56F6A /* Roboto-Medium.ttf */,
-				E4D6CCFC2C426D6B00A56F6A /* Roboto-MediumItalic.ttf */,
-				E4D6CD012C426D6B00A56F6A /* Roboto-Regular.ttf */,
-				E4D6CD022C426D6B00A56F6A /* Roboto-Thin.ttf */,
-				E4D6CCFD2C426D6B00A56F6A /* Roboto-ThinItalic.ttf */,
-			);
-			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

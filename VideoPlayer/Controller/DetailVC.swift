@@ -64,7 +64,6 @@ class DetailVC: UIViewController {
         self.configureUI()
         self.navigationController?.navigationBar.isHidden = true
         self.vm.allMovies = self.relatedMovies
-       
         
     }
     override func viewDidAppear(_ animated: Bool) {
@@ -82,34 +81,24 @@ class DetailVC: UIViewController {
     }
     
     func getAllTimeStamps(){
-        if let currentPlayingMovie = vm.getCurrentPlayingMovieData(){
-            self.movieNameLbl.text = currentPlayingMovie.title ?? ""
-            self.movieDescriptionLbl.text = currentPlayingMovie.description ?? ""
-            self.posterImageView.sd_setImage(with: URL(string: currentPlayingMovie.thumb ?? ""))
-            
-            print("CURRENT PLAYING MOVIE IS  \(currentPlayingMovie.title)")
-            //get timestamp for current movie
-            DatabaseService.shared.readAllTimeStamps { error , timeStamps in
-                if let error{
-                    print(error)
-                }
-                if let timeStamps{
-                    print(timeStamps)
-                   if let filteredMovie = timeStamps.filter { movie in
-                        movie.movieId == currentPlayingMovie.id
-                   }.first{
-                       print(filteredMovie)
-                       self.filteredMovie = filteredMovie
-                       self.vm.resumePlayingFromTimeStamp(seconds: filteredMovie.timeStamp)
-                     //  self.controlView.isHidden = true
-                       self.selectedMovie = currentPlayingMovie
-                       self.playPauseBtn.image = UIImage(systemName: "pause")
-                   }
-                   
-                }
+        DatabaseService.shared.readAllTimeStamps { error , timeStamps in
+            if let error{
+                print(error)
+            }
+            if let timeStamps{
+                print(timeStamps)
+               if let filteredMovie = timeStamps.filter { movie in
+                    movie.movieId == self.selectedMovie?.id
+               }.first{
+                   print(filteredMovie)
+                   self.filteredMovie = filteredMovie
+                   self.vm.resumePlayingFromTimeStamp(seconds: filteredMovie.timeStamp)
+                 //  self.controlView.isHidden = true
+                   self.playPauseBtn.image = UIImage(systemName: "pause")
+               }
+               
             }
         }
-      
     }
     
     func setupTouchGesture(){
@@ -207,17 +196,13 @@ class DetailVC: UIViewController {
     }
     
     @objc func nextImageViewTapped(){
-        self.saveCurrentMovieTimeStamp()
         vm.playNextVideoInQueue()
-       
-        self.getAllTimeStamps()
-        
+        self.updateCurrentMovie()
         self.playPauseBtn.image = UIImage(systemName: "pause")
     }
     @objc func previousImageViewTapped(){
-        self.saveCurrentMovieTimeStamp()
         vm.playPreviousVideoInQueue()
-        self.getAllTimeStamps()
+        self.updateCurrentMovie()
         self.playPauseBtn.image = UIImage(systemName: "pause")
     }
     @objc func playerViewTapped(){
@@ -246,16 +231,33 @@ class DetailVC: UIViewController {
     }
     @objc func backBtnTapped(){
        
-      
-        self.saveCurrentMovieTimeStamp()
+        if vm.getIsPlaying(){
+            if let currentDuration = vm.player?.currentItem?.currentTime(){
+                print(currentDuration)
+                let interval = Int(CMTimeGetSeconds(currentDuration))
+               // let seconds = interval % 60
+              //  let minutes = (interval / 60) % 60
+              //  print(seconds)
+                print("INTERVAL IS \(Double(interval))")
+                
+                if let filteredMovie{
+                    //data is already in db so update
+                    DatabaseService.shared.updateTimeStamp(movieTimeStamp: filteredMovie, newTimeStamp: Double(interval))
+                }
+                else{
+                    //data is not in db so create
+                    DatabaseService.shared.saveData(movieId: self.selectedMovie?.id ?? "", timeStamp: Double(interval))
+                }
+               
+            }
+        }
+       
   
         
       
         self.vm.player?.pause()
         self.navigationController?.popViewController(animated: true)
     }
-    
-    
     
     @objc func fullScreenBtnTapped(){
         if #available(iOS 16.0, *){
@@ -292,30 +294,11 @@ class DetailVC: UIViewController {
         }
     }
     
-    func saveCurrentMovieTimeStamp(){
-        if vm.getIsPlaying(){
-            if let currentDuration = vm.player?.currentItem?.currentTime(){
-                print(currentDuration)
-                let interval = Int(CMTimeGetSeconds(currentDuration))
-               // let seconds = interval % 60
-              //  let minutes = (interval / 60) % 60
-              //  print(seconds)
-                print("INTERVAL IS \(Double(interval))")
-            
-                if let filteredMovie{
-                    //data is already in db so update
-                 
-                    
-                    DatabaseService.shared.updateTimeStamp(movieTimeStamp: filteredMovie, newTimeStamp: Double(interval))
-                }
-                else{
-                    //data is not in db so create no entry from the currently playing video
-                  
-                   
-                    DatabaseService.shared.saveData(movieId: self.selectedMovie?.id ?? "", timeStamp: Double(interval))
-                }
-               
-            }
+    func updateCurrentMovie(){
+        if let currentPlayingMovie = self.vm.getCurrentPlayingMovieData(){
+            self.movieNameLbl.text = currentPlayingMovie.title ?? ""
+            self.movieDescriptionLbl.text = currentPlayingMovie.description ?? ""
+            self.posterImageView.sd_setImage(with: URL(string: currentPlayingMovie.thumb ?? ""))
         }
     }
    
