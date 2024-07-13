@@ -45,7 +45,7 @@ extension BannerCell: UICollectionViewDelegate, UICollectionViewDataSource, UICo
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CELL", for: indexPath) as? BannerCollectionViewCell{
-            cell.updateCell(url: self.movies[indexPath.row].thumb)
+            cell.updateCell(url: self.movies[indexPath.row].thumb ?? "")
             if tableViewIndex.section != 0{
                 cell.layer.borderColor = UIColor.white.cgColor
                 cell.layer.borderWidth = 0.5

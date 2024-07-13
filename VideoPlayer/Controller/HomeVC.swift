@@ -120,9 +120,9 @@ extension HomeVC: BannerCellDelegate{
             var finalVideoURLs = self.movies.filter({ movie in
                 return movie.url != movieData.url
             }).map({ movieData in
-                return movieData.url
+                return movieData.url ?? ""
             })
-            finalVideoURLs.insert(movieData.url, at: 0)
+            finalVideoURLs.insert(movieData.url ?? "", at: 0)
             vc.videoURLs = finalVideoURLs
             vc.selectedMovie = movieData
             vc.relatedMovies = self.movies

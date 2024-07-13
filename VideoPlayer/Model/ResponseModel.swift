@@ -8,10 +8,10 @@
 import Foundation
 
 struct Movie: Codable {
-    let description, id: String
-    let thumb: String
-    let title: String
-    let url: String
+    let description, id: String?
+    let thumb: String?
+    let title: String?
+    let url: String?
 }
 
 

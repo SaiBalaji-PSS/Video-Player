@@ -24,6 +24,7 @@ class DetailVC: UIViewController {
     @IBOutlet weak var nextImageView: UIImageView!
     @IBOutlet weak var previousImageView: UIImageView!
     
+    @IBOutlet weak var fullScreenImageView: UIImageView!
     @IBOutlet weak var endTimeLbl: UILabel!
     
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
@@ -109,6 +110,8 @@ class DetailVC: UIViewController {
         self.playPauseBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(playPauseTapped)))
         self.backBtnImageView.isUserInteractionEnabled = true
         self.backBtnImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(backBtnTapped)))
+        self.fullScreenImageView.isUserInteractionEnabled = true
+        self.fullScreenImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(fullScreenBtnTapped)))
         
     }
     
@@ -122,7 +125,7 @@ class DetailVC: UIViewController {
             self.movieNameLbl.text = selectedMovie.title
             self.movieDescriptionLbl.text = selectedMovie.description
             self.posterImageView.contentMode = .scaleAspectFill
-            self.posterImageView.sd_setImage(with: URL(string: selectedMovie.thumb))
+            self.posterImageView.sd_setImage(with: URL(string: selectedMovie.thumb ?? ""))
             
         }
     }
@@ -201,6 +204,7 @@ class DetailVC: UIViewController {
     }
     @objc func backBtnTapped(){
        
+            
             if let currentDuration = vm.player?.currentItem?.currentTime(){
                 print(currentDuration)
                 let interval = Int(CMTimeGetSeconds(currentDuration))
@@ -224,6 +228,41 @@ class DetailVC: UIViewController {
         self.vm.player?.pause()
         self.navigationController?.popViewController(animated: true)
     }
+    
+    @objc func fullScreenBtnTapped(){
+        if #available(iOS 16.0, *){
+            guard let windowScreen = self.view.window?.windowScene else{return }
+            //go to fullscreen
+            if windowScreen.interfaceOrientation == .portrait{
+                windowScreen.requestGeometryUpdate(.iOS(interfaceOrientations: .landscape)){error in
+                    print(error)
+                }
+                self.fullScreenImageView.image = UIImage(systemName: "arrow.up.right.and.arrow.down.left")
+            }
+            //return from full screen
+            else if windowScreen.interfaceOrientation == .landscapeLeft || windowScreen.interfaceOrientation == .landscapeRight{
+                windowScreen.requestGeometryUpdate(.iOS(interfaceOrientations: .portrait)){error in
+                    print(error)
+                }
+               
+                self.fullScreenImageView.image = UIImage(systemName: "arrow.down.left.and.arrow.up.right")
+            }
+        }
+        else{
+            //go to fullscreen
+            if UIDevice.current.orientation == .portrait{
+                UIDevice.current.setValue(UIInterfaceOrientation.landscapeLeft, forKey: "orientation")
+                
+                self.fullScreenImageView.image = UIImage(systemName: "arrow.up.right.and.arrow.down.left")
+            }
+            //return from full screen
+            else if UIDevice.current.orientation == .landscapeLeft || UIDevice.current.orientation == .landscapeRight{
+                UIDevice.current.setValue(UIInterfaceOrientation.portrait, forKey: "orientation")
+                
+                self.fullScreenImageView.image = UIImage(systemName: "arrow.down.left.and.arrow.up.right")
+            }
+        }
+    }
 }
 
 extension DetailVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
@@ -234,7 +273,7 @@ extension DetailVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CELL", for: indexPath) as? BannerCollectionViewCell{
             cell.layer.borderWidth = 1
             cell.layer.borderColor = UIColor.white.cgColor
-            cell.updateCell(url: self.relatedMovies[indexPath.item].thumb)
+            cell.updateCell(url: self.relatedMovies[indexPath.item].thumb ?? "")
             return cell
         }
         return UICollectionViewCell()
@@ -250,4 +289,10 @@ extension DetailVC: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
         return 0.0
     }
     
+}
+
+extension UIViewController {
+    class func setUIInterfaceOrientation(_ value: UIInterfaceOrientation) {
+        UIDevice.current.setValue(value.rawValue, forKey: "orientation")
+    }
 }
