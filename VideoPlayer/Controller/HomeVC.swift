@@ -124,7 +124,8 @@ extension HomeVC: BannerCellDelegate{
             })
             finalVideoURLs.insert(movieData.url, at: 0)
             vc.videoURLs = finalVideoURLs
-            
+            vc.selectedMovie = movieData
+            vc.relatedMovies = self.movies
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }

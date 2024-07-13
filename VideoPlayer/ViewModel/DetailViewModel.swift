@@ -20,17 +20,19 @@ class DetailViewModel: ObservableObject{
     
     func setupVideoPlayer(videoURLS:[String],playerView: UIView,controlView: UIView){
         //pass the selected video URL as first element in videoURLS array
+        
         self.videoItems = videoURLS.map({ url  in
             AVPlayerItem(url: URL(string: url)!)
         })
         self.player = AVPlayer(playerItem: self.videoItems[0])
         self.playerLayer = AVPlayerLayer(player: player)
+        
         self.playerLayer?.frame = playerView.bounds
         self.playerLayer?.videoGravity = .resizeAspectFill
         if let playerLayer{
             playerView.layer.addSublayer(playerLayer)
             playerView.layer.addSublayer(controlView.layer)
-            self.player?.play()
+         //   self.player?.play()
             
            
                 self.updateAudioPlayerUI()
@@ -101,7 +103,19 @@ class DetailViewModel: ObservableObject{
         }
     }
     
+    func playPause(){
+        if self.player?.rate != 0.0{
+            self.player?.pause()
+        }
+        else{
+            self.player?.play()
+        }
+    }
     
+    func getIsPlaying() -> Bool{
+        return self.player?.rate != 0.0
+    }
+   
     
     func stringFromTimeInterval(interval: TimeInterval) -> String {
         if interval.isNaN == false{

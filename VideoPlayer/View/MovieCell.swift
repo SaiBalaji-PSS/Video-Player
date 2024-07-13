@@ -15,11 +15,15 @@ class MovieCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        
+       
     }
     
     
     func updateCell(imageURL: String){
         self.posterImageView.sd_setImage(with: URL(string: imageURL))
+        self.posterImageView.contentMode = .scaleAspectFill
     }
 
 }

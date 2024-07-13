@@ -35,6 +35,7 @@ class BannerCell: UITableViewCell {
         self.collectionView.reloadData()
     }
     
+    
 }
 
 
@@ -45,6 +46,11 @@ extension BannerCell: UICollectionViewDelegate, UICollectionViewDataSource, UICo
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CELL", for: indexPath) as? BannerCollectionViewCell{
             cell.updateCell(url: self.movies[indexPath.row].thumb)
+            if tableViewIndex.section != 0{
+                cell.layer.borderColor = UIColor.white.cgColor
+                cell.layer.borderWidth = 0.5
+                cell.layer.cornerRadius = 4
+            }
             return cell
         }
         return UICollectionViewCell()
@@ -68,8 +74,9 @@ extension BannerCell: UICollectionViewDelegate, UICollectionViewDataSource, UICo
        }
        
        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-           return 0.0
+           return 10.0
        }
+    
        
        func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
            return 0.0

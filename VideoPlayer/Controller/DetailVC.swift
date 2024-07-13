@@ -11,6 +11,9 @@ import Combine
 
 class DetailVC: UIViewController {
 
+    @IBOutlet weak var backBtnImageView: UIImageView!
+  //  @IBOutlet weak var thumbNailImageView: UIImageView!
+    @IBOutlet weak var posterImageView: UIImageView!
     @IBOutlet weak var playerView: UIView!
     @IBOutlet weak var controlView: UIView!
     @IBOutlet weak var startTimeLbl: UILabel!
@@ -27,8 +30,18 @@ class DetailVC: UIViewController {
     
     @IBOutlet weak var bottomView: UIView!
     
+    @IBOutlet weak var movieNameLbl: UILabel!
+    
+    @IBOutlet weak var movieDescriptionLbl: UILabel!
+    
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    
     var videoURLs = [String]()
     var selectedVideoURL: String?
+    var selectedMovie: Movie?
+    var relatedMovies = [Movie]()
+    
     private var vm = DetailViewModel()
     private var cancellables = Set<AnyCancellable>()
     private var windowInterFace: UIInterfaceOrientation?{
@@ -40,12 +53,25 @@ class DetailVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        vm.setupVideoPlayer(videoURLS: videoURLs, playerView: self.playerView, controlView: self.controlView)
+        
         self.setupTouchGesture()
         self.setupBiding()
+        self.configureUI()
+        self.navigationController?.navigationBar.isHidden = true
         
     }
-    
+    override func viewDidAppear(_ animated: Bool) {
+        //self.playerView.layer.addSublayer(self.thumbNailImageView.layer)
+        vm.setupVideoPlayer(videoURLS: videoURLs, playerView: self.playerView, controlView: self.controlView)
+    }
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.navigationBar.isHidden = false
+    }
     
     func setupTouchGesture(){
         self.playerView.isUserInteractionEnabled = true
@@ -58,7 +84,26 @@ class DetailVC: UIViewController {
         self.forwardBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(seekForwardTapped)))
         self.backwardBtn.isUserInteractionEnabled = true
         self.backwardBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(seekBackwardTapped)))
+        self.playPauseBtn.isUserInteractionEnabled = true
+        self.playPauseBtn.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(playPauseTapped)))
+        self.backBtnImageView.isUserInteractionEnabled = true
+        self.backBtnImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(backBtnTapped)))
         
+    }
+    
+    func configureUI(){
+        self.collectionView.delegate = self
+        self.collectionView.dataSource = self
+        self.collectionView.register(UINib(nibName: "BannerCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CELL")
+        if let selectedMovie{
+           // self.thumbNailImageView.contentMode = .scaleAspectFill
+           // self.thumbNailImageView.sd_setImage(with: URL(string: selectedMovie.thumb))
+            self.movieNameLbl.text = selectedMovie.title
+            self.movieDescriptionLbl.text = selectedMovie.description
+            self.posterImageView.contentMode = .scaleAspectFill
+            self.posterImageView.sd_setImage(with: URL(string: selectedMovie.thumb))
+            
+        }
     }
     
     func setupBiding(){
@@ -85,32 +130,81 @@ class DetailVC: UIViewController {
         if windowInterFace?.isPortrait == true{
             self.heightConstraint.constant = 200
             self.navigationController?.navigationBar.isHidden = false
+
             self.bottomView.isHidden = false
         }
         else{
             self.heightConstraint.constant = self.view.layer.bounds.width
             self.bottomView.isHidden = true
             self.navigationController?.navigationBar.isHidden = true
+          //  self.collectionView.reloadData()
            // self.playerLayer?.frame = self.playerView.bounds
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             self.vm.playerLayer?.frame = self.playerView.bounds
+            self.collectionView.reloadData()
         }
     }
     
     @objc func nextImageViewTapped(){
         vm.playNextVideoInQueue()
+        self.playPauseBtn.image = UIImage(systemName: "pause")
     }
     @objc func previousImageViewTapped(){
         vm.playPreviousVideoInQueue()
+        self.playPauseBtn.image = UIImage(systemName: "pause")
     }
     @objc func playerViewTapped(){
         self.controlView.isHidden.toggle()
     }
     @objc func seekForwardTapped(){
         vm.seekForward()
+        
     }
     @objc func seekBackwardTapped(){
         vm.seekBackward()
     }
+    @objc func playPauseTapped(){
+       // self.thumbNailImageView.isHidden = true
+        if vm.getIsPlaying(){
+            self.playPauseBtn.image = UIImage(systemName: "play")
+            self.controlView.isHidden = false
+        }
+        else{
+            self.playPauseBtn.image = UIImage(systemName: "pause")
+            self.controlView.isHidden = true
+           
+        }
+        vm.playPause()
+    }
+    @objc func backBtnTapped(){
+        self.vm.player?.pause()
+        self.navigationController?.popViewController(animated: true)
+    }
+}
+
+extension DetailVC: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.relatedMovies.count
+    }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CELL", for: indexPath) as? BannerCollectionViewCell{
+            cell.layer.borderWidth = 1
+            cell.layer.borderColor = UIColor.white.cgColor
+            cell.updateCell(url: self.relatedMovies[indexPath.item].thumb)
+            return cell
+        }
+        return UICollectionViewCell()
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: UIScreen.main.bounds.width/3, height: 200)
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0.0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0.0
+    }
+    
 }
