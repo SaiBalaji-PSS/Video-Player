@@ -113,8 +113,8 @@
                                                             <action selector="sliderValueChanged:" destination="8s0-ZE-Lbx" eventType="valueChanged" id="cRg-8T-pvX"/>
                                                         </connections>
                                                     </slider>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="qUd-7o-SkP">
-                                                        <rect key="frame" x="85" y="87.5" width="205" height="25"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="48" translatesAutoresizingMaskIntoConstraints="NO" id="qUd-7o-SkP">
+                                                        <rect key="frame" x="29" y="87.5" width="317" height="25"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowshape.turn.up.left.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="iey-WN-prv">
                                                                 <rect key="frame" x="0.0" y="1" width="25" height="22.5"/>
@@ -125,7 +125,7 @@
                                                                 </constraints>
                                                             </imageView>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backward.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="LGU-U3-gVm">
-                                                                <rect key="frame" x="45" y="2" width="25" height="20.5"/>
+                                                                <rect key="frame" x="73" y="2" width="25" height="20.5"/>
                                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="25" id="p1B-S4-axR"/>
@@ -133,7 +133,7 @@
                                                                 </constraints>
                                                             </imageView>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="play" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="dDs-74-0Aj">
-                                                                <rect key="frame" x="90" y="1.5" width="25" height="21.5"/>
+                                                                <rect key="frame" x="146" y="1.5" width="25" height="21.5"/>
                                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="25" id="7Ir-vA-RCk"/>
@@ -141,7 +141,7 @@
                                                                 </constraints>
                                                             </imageView>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="forward.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="6zo-DB-gbe">
-                                                                <rect key="frame" x="135" y="2" width="25" height="20.5"/>
+                                                                <rect key="frame" x="219" y="2" width="25" height="20.5"/>
                                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="25" id="gmL-5e-2fp"/>
@@ -149,7 +149,7 @@
                                                                 </constraints>
                                                             </imageView>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrowshape.turn.up.right.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="KeD-Ny-1Oc">
-                                                                <rect key="frame" x="180" y="1" width="25" height="22.5"/>
+                                                                <rect key="frame" x="292" y="1" width="25" height="22.5"/>
                                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="25" id="Tma-z6-oYf"/>
