@@ -46,8 +46,8 @@
             filePath = "VideoPlayer/Controller/DetailVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "217"
-            endingLineNumber = "217"
+            startingLineNumber = "231"
+            endingLineNumber = "231"
             landmarkName = "backBtnTapped()"
             landmarkType = "7">
             <Locations>
@@ -109,8 +109,8 @@
             filePath = "VideoPlayer/Controller/DetailVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "221"
-            endingLineNumber = "221"
+            startingLineNumber = "235"
+            endingLineNumber = "235"
             landmarkName = "backBtnTapped()"
             landmarkType = "7">
             <Locations>
@@ -172,8 +172,8 @@
             filePath = "VideoPlayer/Controller/DetailVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "212"
-            endingLineNumber = "212"
+            startingLineNumber = "226"
+            endingLineNumber = "226"
             landmarkName = "backBtnTapped()"
             landmarkType = "7">
             <Locations>
@@ -235,8 +235,8 @@
             filePath = "VideoPlayer/Controller/DetailVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "240"
-            endingLineNumber = "240"
+            startingLineNumber = "254"
+            endingLineNumber = "254"
             landmarkName = "fullScreenBtnTapped()"
             landmarkType = "7">
          </BreakpointContent>
@@ -251,8 +251,8 @@
             filePath = "VideoPlayer/Controller/DetailVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "247"
-            endingLineNumber = "247"
+            startingLineNumber = "261"
+            endingLineNumber = "261"
             landmarkName = "fullScreenBtnTapped()"
             landmarkType = "7">
             <Locations>
@@ -299,8 +299,8 @@
             filePath = "VideoPlayer/Controller/DetailVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "261"
-            endingLineNumber = "261"
+            startingLineNumber = "275"
+            endingLineNumber = "275"
             landmarkName = "fullScreenBtnTapped()"
             landmarkType = "7">
             <Locations>

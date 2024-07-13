@@ -67,6 +67,18 @@ class DetailVC: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         //self.playerView.layer.addSublayer(self.thumbNailImageView.layer)
         vm.setupVideoPlayer(videoURLS: videoURLs, playerView: self.playerView, controlView: self.controlView)
+        self.getAllTimeStamps()
+    }
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.navigationBar.isHidden = false
+    }
+    
+    func getAllTimeStamps(){
         DatabaseService.shared.readAllTimeStamps { error , timeStamps in
             if let error{
                 print(error)
@@ -85,14 +97,6 @@ class DetailVC: UIViewController {
                
             }
         }
-    }
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        self.navigationController?.navigationBar.isHidden = true
-    }
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        self.navigationController?.navigationBar.isHidden = false
     }
     
     func setupTouchGesture(){
@@ -145,6 +149,16 @@ class DetailVC: UIViewController {
     
    
     
+    @IBAction func sliderValueChanged(_ sender: UISlider) {
+        if let duration = vm.player?.currentItem?.duration{
+            let seconds = Int64(Float64(sender.value) * CMTimeGetSeconds(duration))
+
+                   //print(seconds)
+                   
+            vm.player?.seek(to: CMTimeMake(value: seconds, timescale: 1))
+        }
+        
+    }
     
    
     

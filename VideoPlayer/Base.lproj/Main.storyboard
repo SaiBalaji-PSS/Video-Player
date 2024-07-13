@@ -101,6 +101,9 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="Lrq-3T-3Gz"/>
                                                         </constraints>
+                                                        <connections>
+                                                            <action selector="sliderValueChanged:" destination="8s0-ZE-Lbx" eventType="valueChanged" id="cRg-8T-pvX"/>
+                                                        </connections>
                                                     </slider>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="qUd-7o-SkP">
                                                         <rect key="frame" x="22.5" y="75" width="330" height="50"/>
