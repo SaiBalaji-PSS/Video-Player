@@ -17,14 +17,20 @@ class DetailViewModel: ObservableObject{
     @Published var currentTimeValue = ""
     @Published var endTimeValue = ""
     @Published var sliderValue: Float = 0.0
+    var currentMovie: AVPlayerItem?
+    var allMovies = [Movie]()
+    
     
     func setupVideoPlayer(videoURLS:[String],playerView: UIView,controlView: UIView){
         //pass the selected video URL as first element in videoURLS array
-        
+        if videoURLS.isEmpty{return }
         self.videoItems = videoURLS.map({ url  in
             AVPlayerItem(url: URL(string: url)!)
         })
+        
         self.player = AVPlayer(playerItem: self.videoItems[0])
+        self.currentMovie = self.videoItems[0]
+        
         self.playerLayer = AVPlayerLayer(player: player)
         
         self.playerLayer?.frame = playerView.bounds
@@ -65,8 +71,11 @@ class DetailViewModel: ObservableObject{
     func playNextVideoInQueue(){
         if self.videoItems.isEmpty == false{
             self.currentIndex += 1
+            
             self.player?.replaceCurrentItem(with: self.videoItems[self.currentIndex % self.videoItems.count])
+            self.currentMovie = self.videoItems[self.currentIndex % self.videoItems.count]
             self.player?.seek(to: CMTime.zero, completionHandler: { _ in
+               
                 self.player?.play()
             })
         }
@@ -80,7 +89,9 @@ class DetailViewModel: ObservableObject{
                 self.currentIndex = 0
             }
             self.player?.replaceCurrentItem(with: self.videoItems[self.currentIndex % self.videoItems.count])
+            self.currentMovie = self.videoItems[self.currentIndex % self.videoItems.count]
             self.player?.seek(to: CMTime.zero, completionHandler: { _ in
+               
                 self.player?.play()
             })
         }
@@ -122,6 +133,20 @@ class DetailViewModel: ObservableObject{
         self.player?.seek(to: durationValue, completionHandler: { _ in
             self.player?.play()
         })
+    }
+    
+    func getCurrentPlayingMovieData() -> Movie?{
+        if let currrentPlayingAsset = currentMovie{
+            if let currentPlayingURL = currrentPlayingAsset.asset as? AVURLAsset{
+                if let currentMovie = self.allMovies.filter { movie in
+                    movie.url == "\(currentPlayingURL.url)"
+                }.first{
+                    print("CURRENT MOVIE IS \(currentMovie.title ?? "")")
+                    return currentMovie
+                }
+            }
+        }
+        return nil
     }
     
     func stringFromTimeInterval(interval: TimeInterval) -> String {
