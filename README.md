@@ -5,6 +5,11 @@
 * Resume functionality to save the current time stamp of a video using Core Data.
 * Implemented Airplay functionality to play the video on other Apple devices.
 
+## Tech Stack
+* Xcode 15.1
+* Swift Package manager - Firebase, SDWebImage
+* AVKit, UIKit, AirPlay
+
 ## SCREEN SHOTS
 <img width="345" alt="Screenshot 2024-07-13 at 6 51 56 PM" src="https://github.com/user-attachments/assets/ecfd6065-e249-4c4c-b83f-65abf79ecab7">
 <img width="736" alt="Screenshot 2024-07-13 at 1 59 05 PM" src="https://github.com/user-attachments/assets/cd551354-268c-485d-87e5-27668d645814">
